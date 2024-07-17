@@ -1,50 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Simple Website</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
     <style>
-        .page { display: none; }
-        .active { display: block; }
-    </style>
-    <script>
-        function showPage(pageId) {
-            // Hide all pages
-            document.querySelectorAll('.page').forEach(page => {
-                page.style.display = 'none';
-            });
-            // Show the selected page
-            document.getElementById(pageId).style.display = 'block';
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            line-height: 1.6;
+            background-color: #f4f4f4;
         }
-    </script>
+        h1 {
+            color: #333;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            padding: 8px;
+            margin-top: 10px;
+        }
+        a {
+            text-decoration: none;
+            color: blue;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
-<body onload="showPage('home')">
-    <h1>Simple Website</h1>
-    <nav>
-        <ul>
-            <li><a href="#" onclick="showPage('home'); return false;">Home</a></li>
-            <li><a href="#" onclick="showPage('about'); return false;">About</a></li>
-            <li><a href="#" onclick="showPage('contact'); return false;">Contact</a></li>
-        </ul>
-    </nav>
-
-    <div id="home" class="page active">
-        <h2>Home</h2>
-        <p>Welcome to our simple website. This is the home page.</p>
-    </div>
-    <div id="about" class="page">
-        <h2>About</h2>
-        <p>This is the about page. Here you can learn more about us.</p>
-    </div>
-    <div id="contact" class="page">
-        <h2>Contact</h2>
-        <p>Here's how you can contact us. Fill in the form below or reach out via social media.</p>
-        <form>
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name"><br><br>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email"><br><br>
-            <input type="submit" value="Submit">
-        </form>
-    </div>
+<body>
+    <h1>Welcome to My Homepage</h1>
+    <ul>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="ball.html">Ball</a></li>
+        <li><a href="photos.html">Photos</a></li>
+        <li><a href="resume.html">Resume</a></li>
+    </ul>
 </body>
 </html>

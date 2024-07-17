@@ -14,4 +14,3 @@ gemspec
 # do not have a Java counterpart.
 gem "http_parser.rb", "~> 0.6.0", :platforms => [:jruby]
 gem "no-style-please"
->>>>>>> 42959cd78272d7e0fa3514f3b0dffdecb7c2cf17

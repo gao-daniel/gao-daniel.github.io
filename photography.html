@@ -5,77 +5,85 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Photography - Daniel Gao</title>
+    <meta name="description" content="Photography portfolio by Daniel Gao">
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <div class="container">
-        <header>
+    <div class="layout">
+        <aside class="sidebar">
+            <a href="index.html" class="logo">Daniel Gao</a>
             <nav>
-                <a href="index.html" class="logo">Daniel Gao</a>
                 <ul class="nav-links">
-                    <li><a href="index.html">About</a></li>
+                    <li><a href="reinforcement-learning.html">RL</a></li>
                     <li><a href="photography.html" class="active">Photography</a></li>
-                    <li><a href="ml-work.html">ML Work</a></li>
+                    <li><a href="essays.html">Essays</a></li>
                 </ul>
             </nav>
-        </header>
+            <div class="sidebar-footer">
+                &copy; 2025
+            </div>
+        </aside>
 
-        <main>
-            <section>
-                <h1>Photography</h1>
-                <p>A collection of moments captured from my travels and daily life.</p>
+        <div class="content">
+            <main>
+                <section class="hero">
+                    <h1>Photography</h1>
+                    <p>
+                        Quiet moments captured through a lens. Mostly street scenes,
+                        landscapes, and the patterns found in everyday life.
+                    </p>
+                </section>
 
-                <div class="grid">
-                    <div class="card">
-                        <img src="https://placehold.co/600x400/EEE/31343C" alt="Placeholder Image" class="card-img">
-                        <div class="card-content">
-                            <h3 class="card-title">Urban Exploration</h3>
-                            <p class="card-desc">City lights and shadows.</p>
+                <section>
+                    <h2 class="section-title">Selected Work</h2>
+                    <div class="photo-grid">
+                        <div class="photo-item">
+                            <img src="https://placehold.co/600x450/E8E4DD/6B6B6B?text=Urban" alt="Urban landscape">
+                        </div>
+                        <div class="photo-item">
+                            <img src="https://placehold.co/600x450/E8E4DD/6B6B6B?text=Nature" alt="Natural landscape">
+                        </div>
+                        <div class="photo-item">
+                            <img src="https://placehold.co/600x450/E8E4DD/6B6B6B?text=Street" alt="Street photography">
+                        </div>
+                        <div class="photo-item">
+                            <img src="https://placehold.co/600x450/E8E4DD/6B6B6B?text=Light" alt="Light study">
+                        </div>
+                        <div class="photo-item">
+                            <img src="https://placehold.co/600x450/E8E4DD/6B6B6B?text=Quiet" alt="Quiet moment">
+                        </div>
+                        <div class="photo-item">
+                            <img src="https://placehold.co/600x450/E8E4DD/6B6B6B?text=Pattern" alt="Pattern study">
                         </div>
                     </div>
-                    <div class="card">
-                        <img src="https://placehold.co/600x400/EEE/31343C" alt="Placeholder Image" class="card-img">
-                        <div class="card-content">
-                            <h3 class="card-title">Nature's Quiet</h3>
-                            <p class="card-desc">Landscapes from the north.</p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img src="https://placehold.co/600x400/EEE/31343C" alt="Placeholder Image" class="card-img">
-                        <div class="card-content">
-                            <h3 class="card-title">Portraits</h3>
-                            <p class="card-desc">Faces and stories.</p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img src="https://placehold.co/600x400/EEE/31343C" alt="Placeholder Image" class="card-img">
-                        <div class="card-content">
-                            <h3 class="card-title">Abstract</h3>
-                            <p class="card-desc">Patterns in the mundane.</p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img src="https://placehold.co/600x400/EEE/31343C" alt="Placeholder Image" class="card-img">
-                        <div class="card-content">
-                            <h3 class="card-title">Street Life</h3>
-                            <p class="card-desc">Candid moments.</p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img src="https://placehold.co/600x400/EEE/31343C" alt="Placeholder Image" class="card-img">
-                        <div class="card-content">
-                            <h3 class="card-title">Architecture</h3>
-                            <p class="card-desc">Lines and geometry.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </main>
+                </section>
 
-        <footer>
-            &copy; 2025 Daniel Gao. All rights reserved.
-        </footer>
+                <section>
+                    <h2 class="section-title">Collections</h2>
+                    <ul class="item-list">
+                        <li>
+                            <a href="#" class="item-link">
+                                <span class="item-title">Urban Explorations</span>
+                                <p class="item-desc">City streets and the rhythm of daily life.</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="item-link">
+                                <span class="item-title">Natural Light</span>
+                                <p class="item-desc">Studies in morning and evening light.</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="item-link">
+                                <span class="item-title">Quiet Places</span>
+                                <p class="item-desc">Landscapes and moments of stillness.</p>
+                            </a>
+                        </li>
+                    </ul>
+                </section>
+            </main>
+        </div>
     </div>
 </body>
 

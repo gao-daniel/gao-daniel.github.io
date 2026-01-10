@@ -1,53 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daniel Gao</title>
+    <meta name="description" content="Personal website of Daniel Gao - Reinforcement Learning, Photography, and Essays">
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <div class="container">
-        <header>
+    <div class="layout">
+        <aside class="sidebar">
+            <a href="index.html" class="logo">Daniel Gao</a>
             <nav>
-                <a href="index.html" class="logo">Daniel Gao</a>
                 <ul class="nav-links">
-                    <li><a href="index.html" class="active">About</a></li>
+                    <li><a href="reinforcement-learning.html">RL</a></li>
                     <li><a href="photography.html">Photography</a></li>
-                    <li><a href="ml-work.html">ML Work</a></li>
+                    <li><a href="essays.html">Essays</a></li>
                 </ul>
             </nav>
-        </header>
+            <div class="sidebar-footer">
+                &copy; 2025
+            </div>
+        </aside>
 
-        <main>
-            <section class="hero">
-                <h1>Hello, I'm Daniel.</h1>
-                <p>
-                    I am a passionate developer and researcher interested in Machine Learning and Photography. 
-                    Welcome to my personal space where I share my work and perspective.
-                </p>
-                <p>
-                    Currently, I am exploring the intersection of AI and creativity. When I'm not coding, 
-                    you can find me capturing moments through my lens or hiking in the great outdoors.
-                </p>
-            </section>
+        <div class="content">
+            <main>
+                <section class="hero">
+                    <h1>Hello, I'm Daniel.</h1>
+                    <p>
+                        I explore ideas through code, images, and words. Currently interested in
+                        reinforcement learning, capturing quiet moments with a camera, and
+                        writing about technology and its intersection with life.
+                    </p>
+                </section>
 
-            <section>
-                <h2 class="section-title">Connect</h2>
-                <p>
-                    Feel free to reach out to me via email or follow my work on social platforms.
-                </p>
-                <ul style="list-style: none; display: flex; gap: 1rem;">
-                    <li><a href="#" style="color: var(--text-color); text-decoration: underline;">Email</a></li>
-                    <li><a href="#" style="color: var(--text-color); text-decoration: underline;">GitHub</a></li>
-                    <li><a href="#" style="color: var(--text-color); text-decoration: underline;">LinkedIn</a></li>
-                </ul>
-            </section>
-        </main>
+                <section>
+                    <h2 class="section-title">Recent Work</h2>
+                    <ul class="item-list">
+                        <li>
+                            <a href="reinforcement-learning.html" class="item-link">
+                                <span class="item-title">Reinforcement Learning</span>
+                                <p class="item-desc">Research and projects in RL, from policy gradients to multi-agent
+                                    systems.</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="photography.html" class="item-link">
+                                <span class="item-title">Photography</span>
+                                <p class="item-desc">A collection of moments from travels and daily observations.</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="essays.html" class="item-link">
+                                <span class="item-title">Essays</span>
+                                <p class="item-desc">Long-form writing on technology, creativity, and what I'm learning.
+                                </p>
+                            </a>
+                        </li>
+                    </ul>
+                </section>
 
-        <footer>
-            &copy; 2025 Daniel Gao. All rights reserved.
-        </footer>
+                <section>
+                    <h2 class="section-title">Connect</h2>
+                    <ul class="connect-links">
+                        <li><a href="#">Email</a></li>
+                        <li><a href="#">GitHub</a></li>
+                        <li><a href="#">LinkedIn</a></li>
+                    </ul>
+                </section>
+            </main>
+        </div>
     </div>
 </body>
+
 </html>

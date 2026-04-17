@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon Arena - Daniel Gao</title>
+    <meta name="description" content="Challenge a poke-env reinforcement-learning bot on a private Pokemon Showdown server">
+    <link rel="stylesheet" href="/styles.css">
+    <style>
+        .cta {
+            display: inline-block;
+            margin-top: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            font-family: inherit;
+            font-size: 1rem;
+            color: var(--bg-color);
+            background-color: var(--accent-color);
+            text-decoration: none;
+            border: 1px solid var(--accent-color);
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }
+
+        .cta:hover {
+            background-color: var(--text-color);
+            border-color: var(--text-color);
+        }
+
+        .cta-row {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 0.5rem;
+        }
+
+        .status {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+        code {
+            font-family: 'SF Mono', ui-monospace, Menlo, monospace;
+            font-size: 0.9em;
+            background-color: var(--bg-secondary);
+            padding: 0.1rem 0.35rem;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="layout">
+        <aside class="sidebar">
+            <a href="/" class="logo">Daniel Gao</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="/reinforcement-learning/" class="active">RL</a></li>
+                    <li><a href="/photography/">Photography</a></li>
+                    <li><a href="/essays/">Essays</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                &copy; 2025
+            </div>
+        </aside>
+
+        <div class="content">
+            <main>
+                <section class="hero">
+                    <h1>Pokemon Arena</h1>
+                    <p>
+                        A private Pokemon Showdown server hosting a bot I'm training with
+                        <a href="https://github.com/hsahovic/poke-env">poke-env</a>. The
+                        server idles by default and wakes on your click &mdash; expect a
+                        5&ndash;10 second warm-up on the first connection.
+                    </p>
+                </section>
+
+                <section>
+                    <h2 class="section-title">Play</h2>
+                    <p>
+                        Open the Showdown client, pick any username, and challenge
+                        <code>arena-bot</code> to a <code>Random Battle</code>.
+                    </p>
+                    <div class="cta-row">
+                        <a id="play" class="cta" href="/client/">Launch client →</a>
+                        <span id="status" class="status">server sleeping</span>
+                    </div>
+                </section>
+
+                <section>
+                    <h2 class="section-title">How it works</h2>
+                    <ul class="item-list">
+                        <li>
+                            <span class="item-title">GitHub Pages</span>
+                            <p class="item-desc">
+                                Static landing page and a self-hosted
+                                <code>pokemon-showdown-client</code> build, both served
+                                from this site.
+                            </p>
+                        </li>
+                        <li>
+                            <span class="item-title">Fly.io Machine</span>
+                            <p class="item-desc">
+                                A 512MB container running
+                                <code>pokemon-showdown --no-security</code> plus a
+                                poke-env bot. Scales to zero after 5 minutes of no
+                                active battles.
+                            </p>
+                        </li>
+                        <li>
+                            <span class="item-title">Bot</span>
+                            <p class="item-desc">
+                                A poke-env <code>Player</code> subclass that accepts any
+                                open challenge. Current checkpoint is a baseline while
+                                training is in progress.
+                            </p>
+                        </li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2 class="section-title">Caveats</h2>
+                    <ul class="item-list">
+                        <li>
+                            <p class="item-desc">
+                                <code>--no-security</code> means the bot's username is
+                                first-come; usernames aren't registered. Fine for a demo,
+                                not for leaderboards.
+                            </p>
+                        </li>
+                        <li>
+                            <p class="item-desc">
+                                The server resets on every suspend. Replays and ratings
+                                don't persist.
+                            </p>
+                        </li>
+                        <li>
+                            <p class="item-desc">
+                                If the warm-up takes longer than ~15 seconds, refresh
+                                &mdash; the machine may have been building cache from a
+                                cold image.
+                            </p>
+                        </li>
+                    </ul>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <script>
+        // Prewarm the Fly machine before the click so the cold-start
+        // happens while the user is reading this page.
+        const ARENA = "https://pokemon-rl-arena.fly.dev/";
+        const statusEl = document.getElementById("status");
+        let warmed = false;
+
+        function warm() {
+            if (warmed) return;
+            warmed = true;
+            statusEl.textContent = "waking server…";
+            fetch(ARENA, { mode: "no-cors", cache: "no-store" })
+                .then(() => { statusEl.textContent = "server ready"; })
+                .catch(() => { statusEl.textContent = "server ready"; });
+        }
+
+        const btn = document.getElementById("play");
+        btn.addEventListener("mouseenter", warm, { once: true });
+        btn.addEventListener("touchstart", warm, { once: true, passive: true });
+        btn.addEventListener("focus", warm, { once: true });
+        // Also fire on page load so slow-hovering visitors still get a warm server.
+        window.addEventListener("load", () => setTimeout(warm, 1500), { once: true });
+    </script>
+</body>
+
+</html>

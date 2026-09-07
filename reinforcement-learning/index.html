@@ -9,25 +9,13 @@
     <link rel="stylesheet" href="/styles.css">
 </head>
 
-<body>
+<body><a class="skip-link" href="#main">Skip to content</a>
     <div class="layout">
-        <aside class="sidebar">
-            <a href="/" class="logo">Daniel Gao</a>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="/reinforcement-learning/" class="active">RL</a></li>
-                    <li><a href="/photography/">Photography</a></li>
-                    <li><a href="/essays/">Essays</a></li>
-                </ul>
-            </nav>
-            <div class="sidebar-footer">
-                &copy; 2025
-            </div>
-        </aside>
+        <aside class="sidebar"><a href="/" class="logo" aria-label="Daniel Gao, home"><span class="monogram" aria-hidden="true">dg.</span>Daniel Gao</a><nav aria-label="Main navigation"><ul class="nav-links"><li><a href="/" ><span>Home</span><span aria-hidden="true">↗</span></a></li><li><a href="/reinforcement-learning/" class="active" aria-current="page"><span>Reinforcement learning</span><span aria-hidden="true">01</span></a></li><li><a href="/photography/" ><span>Photography</span><span aria-hidden="true">02</span></a></li><li><a href="/essays/" ><span>Essays</span><span aria-hidden="true">03</span></a></li></ul></nav><div class="sidebar-footer"><a href="https://github.com/gao-daniel">GitHub ↗</a><span>© 2026 Daniel Gao</span></div></aside>
 
         <div class="content">
-            <main>
-                <section class="hero">
+            <main id="main">
+                <section class="hero"><p class="eyebrow"><span class="small-line" aria-hidden="true"></span>01 / Code</p>
                     <h1>Reinforcement Learning</h1>
                     <p>
                         Research and projects exploring how agents learn to make decisions
@@ -39,7 +27,7 @@
                     <h2 class="section-title">Projects</h2>
                     <ul class="item-list">
                         <li>
-                            <a href="#" class="item-link">
+                            <div class="item-static">
                                 <span class="item-title">PPO Agent for Complex Environments</span>
                                 <p class="item-desc">
                                     Training a Proximal Policy Optimization agent to navigate multi-objective
@@ -47,37 +35,37 @@
                                     hyperparameter tuning and reward shaping.
                                 </p>
                                 <span class="item-meta">OpenAI Gym · PyTorch</span>
-                            </a>
+                            <span class="draft-label">Details forthcoming</span></div>
                         </li>
                         <li>
-                            <a href="#" class="item-link">
+                            <div class="item-static">
                                 <span class="item-title">Multi-Agent Coordination</span>
                                 <p class="item-desc">
                                     Exploring emergent communication and coordination strategies in
                                     competitive and cooperative multi-agent settings.
                                 </p>
                                 <span class="item-meta">Research · In Progress</span>
-                            </a>
+                            <span class="draft-label">Details forthcoming</span></div>
                         </li>
                         <li>
-                            <a href="#" class="item-link">
+                            <div class="item-static">
                                 <span class="item-title">Inverse Reinforcement Learning</span>
                                 <p class="item-desc">
                                     Learning reward functions from expert demonstrations. Applications
                                     to robotics and autonomous systems.
                                 </p>
                                 <span class="item-meta">Imitation Learning · Robotics</span>
-                            </a>
+                            <span class="draft-label">Details forthcoming</span></div>
                         </li>
                         <li>
-                            <a href="#" class="item-link">
+                            <div class="item-static">
                                 <span class="item-title">Model-Based RL for Sample Efficiency</span>
                                 <p class="item-desc">
                                     Combining learned world models with planning algorithms to reduce
                                     the number of environment interactions needed for learning.
                                 </p>
                                 <span class="item-meta">World Models · Planning</span>
-                            </a>
+                            <span class="draft-label">Details forthcoming</span></div>
                         </li>
                     </ul>
                 </section>
@@ -86,20 +74,20 @@
                     <h2 class="section-title">Notes & Resources</h2>
                     <ul class="item-list">
                         <li>
-                            <a href="#" class="item-link">
+                            <div class="item-static">
                                 <span class="item-title">Policy Gradient Methods: A Primer</span>
                                 <p class="item-desc">From REINFORCE to PPO, understanding the fundamentals.</p>
-                            </a>
+                            <span class="draft-label">Details forthcoming</span></div>
                         </li>
                         <li>
-                            <a href="#" class="item-link">
+                            <div class="item-static">
                                 <span class="item-title">Recommended Reading List</span>
                                 <p class="item-desc">Papers and books that shaped my understanding of RL.</p>
-                            </a>
+                            <span class="draft-label">Details forthcoming</span></div>
                         </li>
                     </ul>
                 </section>
-            </main>
+            <footer class="page-footer"><span>Daniel Gao</span><a href="https://github.com/gao-daniel">Find me on GitHub <span aria-hidden="true">↗</span></a></footer></main>
         </div>
     </div>
 </body>

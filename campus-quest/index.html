@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0f1a1c" />
+    <link rel="icon" href="data:," />
+    <title>Campus Quest</title>
+    <script type="module" crossorigin src="./assets/index-CkUARgIg.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-HBHxtS0U.css">
+  </head>
+  <body>
+    <main class="frame">
+      <div id="game" tabindex="0" aria-label="Campus Quest. Move with arrow keys or WASD. E to interact, Esc for the menu."></div>
+
+      <!-- overworld HUD (ui/hud.ts) -->
+      <div id="hud" class="hud" aria-label="Party"></div>
+      <div id="prompt" class="prompt" hidden><kbd>E</kbd></div>
+
+      <!-- dialogue (ui/dialogue.ts) -->
+      <div id="dialogue" class="dialogue" hidden role="dialog" aria-label="Conversation">
+        <span id="speaker" class="speaker"></span>
+        <p id="dialogue-text" aria-live="polite"></p>
+        <div id="dialogue-choices" class="choices" hidden></div>
+        <button id="next-line" aria-label="Continue">▾</button>
+      </div>
+
+      <!-- battle command UI (ui/battle.ts) -->
+      <div id="battle-ui" class="battle-ui" hidden></div>
+
+      <!-- pause menu & shop (ui/menu.ts, ui/shop.ts) -->
+      <div id="menu" class="pause-menu" hidden></div>
+      <div id="shop" class="shop" hidden></div>
+
+      <!-- full-screen cards: chapter titles, game over, ending (ui/cards.ts) -->
+      <div id="card" class="card" hidden></div>
+      <div id="fade" class="fade" aria-hidden="true"></div>
+
+      <!-- title screen (scenes/BootScene.ts) -->
+      <div id="start" class="start" hidden>
+        <h1>Campus Quest</h1>
+        <div id="start-menu"></div>
+        <small>WASD · E · ESC</small>
+      </div>
+    </main>
+  </body>
+</html>

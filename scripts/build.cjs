@@ -1,6 +1,6 @@
 const fs = require('node:fs');
 const path = require('node:path');
-const files = ['index.html', 'styles.css', 'reinforcement-learning/index.html', 'photography/index.html', 'essays/index.html', 'battle/index.html'];
+const files = ['index.html', 'styles.css', 'battle/index.html'];
 for (const file of files) {
   const target = path.join('dist', file);
   fs.mkdirSync(path.dirname(target), { recursive: true });
